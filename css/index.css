@@ -1,0 +1,142 @@
+/* available typefaces:
+museo-sans
+museo-sans-rounded
+museo-sans-condensed
+museo-sans-display
+
+hoosier-daddy
+
+monotalic
+monotalic-narrow
+monotalic-wide
+
+halyard-display
+halyard-micro
+halyard-text
+
+titling-gothic-fb
+titling-gothic-fb-narrow
+titling-gothic-fb-extended
+titling-gothic-fb-wide
+titling-gothic-fb-skyline
+titling-gothic-fb-condensed
+
+neue-haas-grotesk-display
+neue-haas-grotesk-text
+
+itc-american-typewriter
+itc-american-typewriter-cond
+
+gill-sans-nova
+gill-sans-nova-deco
+gill-sans-nova-inline
+gill-sans-nova-shadowed
+gill-sans-nova-shadowed-outl
+gill-sans-nova-extra-condens
+gill-sans-nova-condensed
+
+*/
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover{
+    color: unset
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-collapse{
+    display: flex;
+}
+.navbar-collapse li{
+    align-self: center;
+    list-style-type: none;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.navbar-toggler{
+    display: none;
+}
+
+
+*{
+    font-family: 'titling-gothic-fb-narrow' , sans-serif;
+    font-family: 'neue-haas-grotesk-display' , sans-serif;
+    /* font-family: 'gill-sans-nova' , sans-serif; */
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+p{
+    /* margin-bottom: 20px; */
+}
+header{
+    padding: 40px 5% 0;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+
+.navbar{
+    padding: 0
+}
+
+.st1, .st2{
+    fill: #fff;
+}
+.st0{opacity:0.7;}
+
+.st3{
+    stroke:#000101;
+    stroke-width:9.963457e-03;
+    stroke-miterlimit:2.6131;
+}
+#name{
+    font-size: 24px;
+    font-family: 'neue-haas-grotesk-display';
+    font-weight: 300;
+    align-self: center;
+    padding-left: 10px;
+    width: 200px;
+}
+.svg-wrap{
+    width:80px;
+    height: 80px;
+    background: #222;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.svg-wrap svg{
+    width:100%
+}
+#nav-icon{
+    display: flex;
+    padding: 0;
+
+}
+
+
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+#content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
+    height: 100px;
+    background: #eee;
+    margin-top: 40px;
+}
+
