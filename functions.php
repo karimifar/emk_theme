@@ -127,7 +127,7 @@ function emk_theme_scripts() {
 	wp_enqueue_style( 'Adobe-fonts', "https://use.typekit.net/hfi5ycp.css");
 	
 	wp_enqueue_style( 'emk_theme-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'emk_styles', get_template_directory_uri() . '/css/index.css' );
+	wp_enqueue_style( 'emk_styles', get_template_directory_uri() . '/css/index.css', array('emk_theme-style') );
 	
 	
 
