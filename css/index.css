@@ -146,7 +146,17 @@ body.scrolled .svg-wrap{
 
 }
 
+.col-35{
+    width: 35%;
+}
 
+.col-65{
+    width: 65%;
+}
+
+.full-col{
+    width: 100%;
+}
 
 html, body {
     height: 100%;
@@ -160,8 +170,11 @@ body {
 }
 .footer {
     flex-shrink: 0;
-    height: 100px;
+    height: 30px;
+    padding: 5px;
+    font-size: 12px;
     background: #eee;
     margin-top: 40px;
+    text-align: center;
 }
 

@@ -22,9 +22,11 @@ header{
 .svg-wrap svg{
     width:100%
 }
-
-body{
-    /* background: #555; */
+#content{
+    display: flex;
+    padding: 0px 5%;
+    padding-right: 0;
+    flex-wrap: wrap;
 }
 
 #typedtext{
@@ -37,12 +39,7 @@ body{
     height: 50px;
     padding-left: 90px;
 }
-#content{
-    display: flex;
-    padding: 0px 5%;
-    padding-right: 0;
-    flex-wrap: wrap;
-}
+
 .full-col{
     width:100%;
 }

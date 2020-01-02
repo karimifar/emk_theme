@@ -1,6 +1,30 @@
-
-body {
-    /* background-color: aqua; */
-    height: 1600px;
+#content{
+    display: flex;
+    padding: 50px 0 0 5%;
+    flex-wrap: wrap;
 }
-
+.work-img-wrap{
+    width: 100%;
+}
+.work-img-wrap img{
+    width: 100%;
+}
+.work-desc{
+    margin-top: 30px;
+}
+.work-content{
+    margin-top: 30px;
+}
+h1{
+    font-size: 48px;
+    font-weight: 100;
+}
+.desc-content{
+    margin-right: 20px;
+}
+.desc-content p{
+    font-size: 16px;
+    line-height: 1.2em;
+    margin-bottom: 1em;
+    letter-spacing: 0.02em;
+}
