@@ -37,6 +37,9 @@ gill-sans-nova-condensed
 
 */
 
+img{
+    width: 100%;
+}
 a{
     color: #000;
     text-decoration: none;

@@ -1,0 +1,36 @@
+#works-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+#content{
+    padding: 0px 5%;
+}
+.work-card{
+    width:33%;
+    background-color: aqua;
+    flex-grow: 1;
+    position: relative;
+    height: 200px;
+}
+
+.info, .thumbnail, .overlay-grad, .overlay-solid{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+}
+.thumbnail img, .info, .overlay-grad, .overlay-solid{
+    width: 100%;
+    height: 200px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: 50% 50%;
+}
+.thumbnail{
+    overflow: hidden;
+}
+
+.thumbnail img{
+    object-fit: cover;
+    opacity: 1;
+    -webkit-filter: grayscale(0.5);
+    filter: grayscale(0.5);
+}

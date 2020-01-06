@@ -55,9 +55,9 @@
         $imageGallery = get_field("image_gallery");
         if ($imageGallery){
             foreach($imageGallery as $imageArr){
-                echo '<div class="work-img-wrap">';
+                echo '<div class="work-wrap">';
                 echo '<img src="' . $imageArr['url'] .'" alt="">';
-                echo '<p>' . $imageArr['caption'] .'</p>';
+                echo '<div class="img-caption"><p>' . $imageArr['caption'] .'</p></div>';
                 echo '</div>';
             }
             
