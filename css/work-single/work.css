@@ -42,3 +42,14 @@ h1{
     margin-bottom: 1em;
     letter-spacing: 0.02em;
 }
+
+code span{
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+.content-element{
+    margin-bottom: 10px;
+}
+p.content-element{
+    margin-bottom: 20px;
+}

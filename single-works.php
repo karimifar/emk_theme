@@ -6,7 +6,9 @@
  *
  * @package emk_theme
  */
-    wp_enqueue_style( 'work-single', get_template_directory_uri() . "/css/work-single/work.css", array('emk_styles') );
+    wp_enqueue_style( 'work-single', get_template_directory_uri() . "/css/prism.css", array('emk_styles') );
+    wp_enqueue_style( 'prism-css', get_template_directory_uri() . "/css/work-single/work.css", array('emk_styles') );
+    wp_enqueue_script( 'prism-js', get_template_directory_uri() . "/js/prism.js", array('jquery'), null, true );
     wp_enqueue_script( 'work-scripts', get_template_directory_uri() . "/js/work-single/work.js", array('jquery'), null, true );
 
     get_header();
@@ -37,19 +39,37 @@
     }
 
     function get_work_content(){
-        // if( have_rows('project_images') ):
+        if( have_rows('project_content') ):
 
-        //    while ( have_rows('project_images') ) : the_row();
-       
-        //        $imageCaption = get_sub_field('image_caption');
-        //        $imageUrl = get_sub_field('image_url');
+            while ( have_rows('project_content') ) : the_row();
+                $contentType = get_sub_field('content_type');
+                // echo '<h1>'. $contentType . '</h1>';
+                switch ($contentType) {
+                case 1:
+                    $image = get_sub_field('image');
+                    echo '<img class="content-element" src=' . $image['url'] . ' alt="">';
+                    break;
+                case 2:
+                    $header = get_sub_field('header_text');
+                    echo '<h1 class="content-element">'. $header . '</h1>';
+                    break;
+                case 3:
+                    $body_paragraph = get_sub_field('body_text');
+                    echo '<p class="content-element">'. $body_paragraph . '</p>';
+                    break;
+                case 4:
+                    $html_code = get_sub_field('code');
+                    echo '<div class="content-element">' . $html_code . '</div>';
+                    break;
+                case 5:
+                    $code_block = get_sub_field('code');
+                    $code_lang = get_sub_field('code_language');
+                    echo '<div class="content-element"><pre><code class="language-' . $code_lang . '">' . $code_block . '</code></pre></div>';
+                    break;
+                }    
+           endwhile;
 
-        //        echo '<img src="' . $imageUrl .'" alt="">';
-        //        echo $imageCaption;
-       
-        //    endwhile;
-
-        // endif;
+        endif;
 
 
         $imageGallery = get_field("image_gallery");

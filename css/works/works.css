@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 }
 #content{
-    padding: 0px 5%;
+    padding: 5% 5%;
 }
 .work-card{
     width:33%;
@@ -13,6 +13,19 @@
     height: 200px;
 }
 
+.work-card .info{
+    z-index: 2;
+    opacity: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.work-card .overlay-grad{
+    background: linear-gradient(0deg, rgba(38, 34, 98, 0.1) 0%, rgb(0, 82, 117, 0) 100%);
+}
 .info, .thumbnail, .overlay-grad, .overlay-solid{
     position: absolute;
     width: 100%;
@@ -33,4 +46,18 @@
     opacity: 1;
     -webkit-filter: grayscale(0.5);
     filter: grayscale(0.5);
+    transform: scale(1.1);
+}
+
+.work-card:hover img{
+    transform: scale(1);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+.work-card:hover .info{
+    opacity: 1;
+}
+
+.work-card:hover .overlay-grad{
+    background: linear-gradient(0deg, rgba(38, 34, 98, 0.7) 0%, rgb(0, 82, 117, 0) 100%);
 }
