@@ -1,0 +1,47 @@
+#content{
+    display: flex;
+    padding: 50px 5%;
+    flex-wrap: wrap;
+}
+.col-65{
+    margin: auto;
+    min-width: 600px;
+    max-width: 100%;
+}
+.img-caption p{
+    font-size: 14px;
+    font-weight: 100;
+    /* font-style: italic; */
+    line-height: 1.2em;
+    text-align: right;
+}
+.blog-desc{
+    margin-top: 30px;
+}
+.blog-content{
+    margin-top: 30px;
+}
+h1{
+    font-size: 48px;
+    font-weight: 100;
+}
+.desc-content{
+    margin-right: 20px;
+}
+.desc-content p{
+    font-size: 14px;
+    line-height: 1.2em;
+    margin-bottom: 1em;
+    letter-spacing: 0.02em;
+}
+
+code span{
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+.content-element{
+    margin-bottom: 10px;
+}
+p.content-element{
+    margin-bottom: 20px;
+}

@@ -6,8 +6,8 @@
  *
  * @package emk_theme
  */
-    wp_enqueue_style( 'work-single', get_template_directory_uri() . "/css/prism.css", array('emk_styles') );
-    wp_enqueue_style( 'prism-css', get_template_directory_uri() . "/css/work-single/work.css", array('emk_styles') );
+    wp_enqueue_style( 'prism-css', get_template_directory_uri() . "/css/prism.css", array('emk_styles') );
+    wp_enqueue_style( 'work-single', get_template_directory_uri() . "/css/work-single/work.css", array('emk_styles') );
     wp_enqueue_script( 'prism-js', get_template_directory_uri() . "/js/prism.js", array('jquery'), null, true );
     wp_enqueue_script( 'work-scripts', get_template_directory_uri() . "/js/work-single/work.js", array('jquery'), null, true );
 
