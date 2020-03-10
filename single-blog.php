@@ -16,14 +16,21 @@
     create_blog_page();
 
     function create_blog_page(){
-        
+
+        echo '<div class="full-col column banner-wrap">';
+            echo '<img src='.get_the_post_thumbnail_url().'>';
+        echo '</div>';
         echo '<div class="col-65 column title-row">';
-            echo '<h1 class="page-title">'.get_the_title().'</h1>';
+            echo '<div class="page-title">';
+                echo '<h1>'.get_the_title().'</h1>';
+                echo '<p>'. get_the_date('Y-m-d') . '</p>';
+            echo '</div>';
+            // echo '<div class="img-wrap"><img src='.get_the_post_thumbnail_url().'></div>';
         echo '</div>';
         echo '<div class="col-65 column blog-desc">';
             get_work_description();
         echo '</div>';
-        echo '<div class="col-65 column blog-content">';
+        echo '<div class="col-50 column blog-content">';
             get_blog_content();
         echo '</div>';
 

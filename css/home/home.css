@@ -38,6 +38,7 @@ header{
     width:35%;
     height: 50px;
     padding-left: 90px;
+    font-family: 'capitolium-2' , serif;
 }
 
 .full-col{
@@ -46,6 +47,11 @@ header{
 .left-col{
     width: 35%;
     margin-top: 50px;
+}
+.all-posts{
+    /* box-shadow: 10px 10px 0 #111;
+    border: 1px solid #222; */
+    margin-right: 20px;
 }
 
 .right-col{
@@ -128,9 +134,12 @@ header{
     border: 1px solid #aaa;
     transition: all 0.5s ease-in-out;
     pointer-events: none;
+
+    box-shadow: 10px 10px 0 #111;
+    border: 1px solid #222;
 }
 .info h2{
-    font-weight: 500;
+    font-weight: 100;
     font-size: 28px;
     line-height: 1em;
     max-width: 500px;
@@ -139,8 +148,11 @@ header{
 
 }
 .info p{
-    /* opacity: 0;
-    transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1); */
+    font-size: 14px;
+    /* font-family: 'minion pro', serif; */
+    margin-top: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 .thumbnail img{
     object-fit: cover;
@@ -197,16 +209,30 @@ header{
 .blog-card{
     display: block;
     padding: 10px;
-    margin-right:20px;
+    /* margin-right:20px; */
     border-bottom: 1px solid #ddd;
     color: #555;
 }
 .blog-card h2{
+    /* font-family: 'capitolium-2' , serif; */
+    font-family: 'neue-haas-grotesk-display' , sans-serif;
     font-weight: 500;
     margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.2em;
+}
+
+.blog-card p{
+    font-size: 16px;
+    font-family: 'capitolium-2' , serif;
+    font-weight: 100;
+    /* font-family: 'Minion Pro', serif; */
 }
 .blog-card h2 span{
+    /* font-family: 'capitolium-2' , serif; */
+    font-family: 'neue-haas-grotesk-display' , sans-serif;
     font-weight: 100;
+    font-variant-numeric: lining-nums;
 }
 .blog-card:last-child{
     border-bottom: none;

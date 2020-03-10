@@ -30,19 +30,35 @@
     margin-top: 30px;
 }
 h1{
-    font-size: 48px;
-    font-weight: 100;
+    font-size: 68px;
+    font-weight: 900;
+    font-family: 'capitolium-2', serif;
 }
 .desc-content{
     margin-right: 20px;
+    /* box-shadow: 5px 5px 0 #111;
+    border: 1px solid #222;
+    padding: 10px; */
 }
 .desc-content p{
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.2em;
     margin-bottom: 1em;
     letter-spacing: 0.02em;
 }
 
+.desc-content a{
+    font-family: 'neue-haas-unica' , sans-serif ;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.work-content h1{
+    font-family: 'neue-haas-unica' , sans-serif ;
+    margin-top:40px;
+    font-size: 36px;
+    font-weight: 900;
+}
 code span{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 }

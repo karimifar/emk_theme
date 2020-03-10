@@ -24,6 +24,9 @@ titling-gothic-fb-condensed
 neue-haas-grotesk-display
 neue-haas-grotesk-text
 
+neue-haas-unica
+
+
 itc-american-typewriter
 itc-american-typewriter-cond
 
@@ -68,14 +71,17 @@ nav{
 
 
 *{
-    font-family: 'titling-gothic-fb-narrow' , sans-serif;
-    font-family: 'neue-haas-grotesk-display' , sans-serif;
+    font-family: 'neue-haas-unica' , sans-serif;
     /* font-family: 'gill-sans-nova' , sans-serif; */
     font-weight: 300;
     box-sizing: border-box;
 }
 
 p{
+    font-family: 'neue-haas-unica' , sans-serif;
+    /* font-family: 'minion-pro' , sans-serif; */
+    font-size: 16px;
+    line-height: 1.15em;
     /* margin-bottom: 20px; */
 }
 header{

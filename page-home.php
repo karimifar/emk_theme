@@ -19,7 +19,9 @@ function create_home_page(){
     echo '<div class="full-col"><div id="typedtext"></div></div>';
     echo '<div class="left-col column">';
         echo '<div class="col-title posts-title"><h3>Recent blog posts</h3></div>';
-        get_blog_posts();
+        echo '<div class="all-posts">';
+            get_blog_posts();
+        echo '</div>';
     echo '</div>';
     echo '<div class="right-col column" id="works-row">';
     echo '<div class="col-title works-title"><h3>featured projects</h3></div>';
@@ -86,10 +88,11 @@ function get_blog_posts(){
         $date = get_the_date();
         $postUrl = get_permalink( $post_id );
         $blurb = get_field('blurb',$post_id);
+        $blurb_small = substr($blurb, 0, 120);
         echo '<a href=' .$postUrl . ' class="blog-card">';
         // echo '<div class="blog-card">';
         echo '<h2>' . $title . ' |<span> ' .$date .'</span></h2>';
-        echo '<p>' . $blurb . '</p>';
+        echo '<p>' . $blurb_small . '...</p>';
         echo '</a>';
     }
 }
