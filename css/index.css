@@ -71,21 +71,21 @@ nav{
 
 
 *{
-    font-family: 'neue-haas-unica' , sans-serif;
+    font-family: 'arboria' , sans-serif;
     /* font-family: 'gill-sans-nova' , sans-serif; */
     font-weight: 300;
     box-sizing: border-box;
 }
 
 p{
-    font-family: 'neue-haas-unica' , sans-serif;
+    font-family: 'arboria' , sans-serif;
     /* font-family: 'minion-pro' , sans-serif; */
     font-size: 16px;
     line-height: 1.15em;
     /* margin-bottom: 20px; */
 }
 header{
-    padding: 40px 5% 0;
+    padding: 40px calc(10px + 2%) 0;
     border-bottom: 1px solid #ddd;
     background:#fff;
     width: 100%;
@@ -123,7 +123,6 @@ body.scrolled #name{
 }
 #name{
     font-size: 2px;
-    font-family: 'neue-haas-grotesk-display';
     font-weight: 300;
     align-self: center;
     padding-left: 10px;

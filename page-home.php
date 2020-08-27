@@ -16,16 +16,54 @@ get_header();
 create_home_page();
 
 function create_home_page(){
-    echo '<div class="full-col"><div id="typedtext"></div></div>';
-    echo '<div class="left-col column">';
-        echo '<div class="col-title posts-title"><h3>Recent blog posts</h3></div>';
-        echo '<div class="all-posts">';
-            get_blog_posts();
+    // echo '<div class="full-col"><div id="typedtext"></div></div>';
+    echo '<div id="works-wrap">';
+        echo '<div id="intro-type">';
+            echo '<div id="typedtext"></div>';
         echo '</div>';
-    echo '</div>';
-    echo '<div class="right-col column" id="works-row">';
-    echo '<div class="col-title works-title"><h3>featured projects</h3></div>';
-        get_featured_works();
+        echo '<div id="works-img-wrap">';
+            $query = new WP_Query(array(
+                'post_type' => 'works',
+                'post_status' => 'publish',
+                'posts_per_page' => '-1',
+            ));
+            while ($query->have_posts()) {
+                $query->the_post();
+                $post_id = get_the_ID();
+                $thumbnail= get_the_post_thumbnail_url($post_id);
+                $workType = get_field('work_type',$post_id);
+                $title = get_the_title();
+                $worlUrl = get_permalink( $post_id );
+                $overlay = get_field('overlay_color', $post_id);
+
+                echo '<div id=img-'.$post_id.' class="work-thumb-wrap nodisplay">';
+                    echo '<img src='.$thumbnail.' alt="">';
+                echo '</div>';
+            }
+
+        echo '</div>';
+        echo '<div id="works-nav-wrap">';
+            $query = new WP_Query(array(
+                'post_type' => 'works',
+                'post_status' => 'publish',
+                'posts_per_page' => '-1',
+            ));
+            while ($query->have_posts()) {
+                $query->the_post();
+                $post_id = get_the_ID();
+                $thumbnail= get_the_post_thumbnail_url($post_id);
+                $workType = get_field('work_type',$post_id);
+                $title = get_the_title();
+                $workUrl = get_permalink( $post_id );
+                $overlay = get_field('overlay_color', $post_id);
+
+                echo '<div class="work-nav" data-target=img-'.$post_id.'>';
+                    echo '<a href='.$workUrl.'>';
+                        echo '<h2>'.$title.'</h2>';
+                    echo '</a>';
+                echo '</div>';
+            }
+        echo '</div>';
     echo '</div>';
 }
 

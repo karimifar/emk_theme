@@ -1,6 +1,6 @@
 #content{
     display: flex;
-    padding: 50px 0 0 5%;
+    padding: 50px calc(10px + 2%) 0;
     flex-wrap: wrap;
 }
 .work-wrap{
@@ -32,7 +32,7 @@
 h1{
     font-size: 68px;
     font-weight: 900;
-    font-family: 'capitolium-2', serif;
+    font-family: 'gopher', sans-serif;
 }
 .desc-content{
     margin-right: 20px;
