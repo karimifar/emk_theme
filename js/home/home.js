@@ -65,9 +65,6 @@ for (var i=0; i<works_nav.length; i++){
 }
 
 
-var colorEl = $(".rainbow");
-var colors = ["#222","#456287", "#888"];
-
 
 
 //text carousel

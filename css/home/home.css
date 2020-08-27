@@ -108,6 +108,7 @@ header{
 .nodisplay{
     display: none;
 }
+
 #dash{
     animation: fadein 1s ease-in-out infinite;
 }
