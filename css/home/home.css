@@ -78,6 +78,13 @@ header{
     font-weight: 900;
     font-family: 'gopher', sans-serif;
 }
+#intro-type h1 span{
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'gopher', sans-serif;
+    color:#fff;
+}
+
 #typedtext.navstarted{
     display: none;
 }
@@ -102,7 +109,7 @@ header{
     display: none;
 }
 #dash{
-    animation: fadein 0.5s ease-in-out infinite;
+    animation: fadein 1s ease-in-out infinite;
 }
 @keyframes fadein{
     0% {opacity: 0;}
@@ -110,8 +117,8 @@ header{
 }
 @keyframes dash{
     0% {opacity: 0;}
-    20% {opacity: 1;}
-    80% {opacity: 1;}
+    10% {opacity: 1;}
+    50% {opacity: 1;}
     100% {opacity: 0;}
 }
 

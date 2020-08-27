@@ -12,26 +12,26 @@ function resetVars(){
     iRow; // initialise current row
 
 }
-var aText = ["I’m an interaction designer who codes to visualize and communicate things!", "hello"]
+var aText = ["Hello hello hello", "bye"]
 
 var iSpeed = 100; // time delay of print out
 var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 2; // start scrolling up at this many lines
+var iArrLength = aText[iIndex].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
     
 var iTextPos = 0; // initialise text position
 var sContents = ''; // initialise contents variable
 var iRow; // initialise current row
-
+var destination = $("#typedtext");
 function typewriter(){
     sContents =  ' ';
     iRow = Math.max(0, iIndex-iScrollAt);
-    var destination = $("#typedtext");
     while ( iRow < iIndex ) {
         sContents += "<h1>"+aText[iRow++] + "</h1>"; //'<br />';
     }
-    destination.html(sContents + aText[iIndex].substring(0, iTextPos) + "<span id='dash'>_</span>");
+    destination.html(sContents + aText[iIndex].substring(0, iTextPos) + "<span id='dash'>|</span>");
     if ( iTextPos++ == iArrLength ) {
+
         iTextPos = 0;
         iIndex++;
     if ( iIndex != aText.length ) {
@@ -42,17 +42,6 @@ function typewriter(){
         setTimeout("typewriter()", iSpeed);
     }
 }
-    
-    
-typewriter();
-
-
-// function contactIn(){
-//     TweenMax.staggerFromTo(".contact-el", 1 ,{opacity:0, ease:Power1.easeIn},{opacity:1, ease:Power1.easeIn, delay: 6}, 0.2 )
-// }
-// // setTimeout(contactIn, 2000);
-// contactIn();
-
 
 var works_nav = $(".work-nav")
 
@@ -74,3 +63,65 @@ for (var i=0; i<works_nav.length; i++){
     })
 
 }
+
+
+
+
+
+//text carousel
+var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+  
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+  
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+  
+    if (this.isDeleting) { delta /= 2; }
+  
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+  
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+  
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };

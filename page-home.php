@@ -16,10 +16,22 @@ get_header();
 create_home_page();
 
 function create_home_page(){
-    // echo '<div class="full-col"><div id="typedtext"></div></div>';
+    $typeArr= array();
+    if( have_rows('type_carousel') ):
+
+        while( have_rows('type_carousel') ) : the_row();
+    
+            $type = get_sub_field('type');
+            array_push($typeArr, $type);
+        endwhile;
+    else :
+    endif;
+    $jsonArr = esc_attr(json_encode($typeArr));
     echo '<div id="works-wrap">';
-        echo '<div id="intro-type">';
-            echo '<div id="typedtext"></div>';
+        echo '<div id="intro-type" class="rainbow">';
+            echo '<div id="typedtext">';
+                echo '<h1>I\'m <span class="txt-rotate" data-period="2000" data-rotate='."'". $jsonArr ."'".'></span></h1>';
+            echo '</div>';
         echo '</div>';
         echo '<div id="works-img-wrap">';
             $query = new WP_Query(array(
