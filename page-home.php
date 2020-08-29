@@ -117,9 +117,10 @@ function get_blog_posts(){
         
         $blurb_small = substr($blurb, 0, 120);
         echo '<div class="'.(($source)? 'blog-card tooltip" data-source="'.$source. '" data-icon="'. $tooltip_icon : 'blog-card') .'">';
-            echo '<div class="blog-card-line rainbow-border"></div>';
 
             echo '<a target="_blank" href=' .$postUrl . '>';
+            echo '<div class="blog-card-line rainbow-border"></div>';
+
             // echo '<div class="blog-card">';
             echo '<h3 class="rainbow-text">' . $title . (($source)? '<span class="source"> from '.$source.'</span>':"") .'<span class="date"><br>'.$date .'</span></h3>';
             echo '</a>';

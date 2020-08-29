@@ -219,7 +219,7 @@ header{
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin:-10px 0 10px;
 }
-.blog-card:hover .blog-card-line{
+.blog-card a:hover .blog-card-line{
     width:60%;
     opacity: 0.7;
     margin-bottom: 5px;
