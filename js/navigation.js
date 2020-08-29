@@ -107,12 +107,26 @@
 
 
 
-var colorEl = $(".rainbow");
-var colors = ["#222", "#07272e" ,"#254749" ,"#1b365f" ,"#3c3b4e","#1e1a37","#762f36", "#1a1c35", "003b4a", ];
 
-setInterval(function() {
-    
-	var colorIndex= Math.floor(Math.random() * colors.length)
-	console.log(colorIndex)
-    $(".rainbow").css("background", colors[1])
-}, 3000);
+
+
+//TOOLTIP
+$("html").append("<div id='tooltip'></div>")
+
+$(".tooltip").mousemove(function(e){
+	var source = this.dataset.source;
+	var icon = this.dataset.icon;
+	var tooltip = $("#tooltip");
+	var mouseX = e.clientX+20
+	var mouseY = e.clientY + window.scrollY
+	tooltip.addClass("show");
+	console.log(window.scrollY)
+	tooltip.css("top",mouseY)
+	tooltip.css("left",mouseX)
+	tooltip.html("<div class='icon'><img src="+icon+"></div><p> "+source+"</p>")
+})
+$(".tooltip").mouseleave(function(e){
+	var tooltip = $("#tooltip");
+	tooltip.empty()
+	tooltip.removeClass("show");
+})

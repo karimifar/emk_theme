@@ -75,6 +75,8 @@ nav{
     /* font-family: 'gill-sans-nova' , sans-serif; */
     font-weight: 300;
     box-sizing: border-box;
+    overflow-anchor: none;
+
 }
 
 p{
@@ -146,9 +148,7 @@ body.scrolled .svg-wrap{
     justify-content: center;
     transition: all 0.2s ease-in-out;
 }
-.rainbow{
-    transition: background 3s ease-in-out;
-}
+
 .svg-wrap svg{
     width:100%
 }
@@ -191,3 +191,26 @@ body {
     text-align: center;
 }
 
+#tooltip{
+    display: none;
+    position: absolute;
+    width:fit-content;
+    z-index: 100;
+}
+#tooltip.show{
+    display: flex;
+    background:#000000dd;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+#tooltip .icon{
+    width:18px;
+    height: auto;
+    align-self: center;
+    margin-right: 3px;
+}
+#tooltip p{
+    align-self: center;
+    color:#fff;
+}

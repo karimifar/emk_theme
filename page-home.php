@@ -72,56 +72,24 @@ function create_home_page(){
                 echo '<div class="work-nav" data-target=img-'.$post_id.'>';
                     echo '<a href='.$workUrl.'>';
                         echo '<h2>'.$title.'</h2>';
+                        echo '<div class="work-nav-line rainbow-border"></div>';
                     echo '</a>';
                 echo '</div>';
             }
         echo '</div>';
-    echo '</div>';
-}
+    echo '</div> <!--#works-wrap-->';
 
 
-
-
-function get_featured_works(){
-    echo '<div id="works-wrap">';
-    $query = new WP_Query(array(
-        'post_type' => 'works',
-        'post_status' => 'publish',
-        'posts_per_page' => '-1',
-    ));
-    
-    
-    while ($query->have_posts()) {
-        $query->the_post();
-        $post_id = get_the_ID();
-        $isFeatured = get_field('is_featured',$post_id);
+    echo '<div id="blog">';
         
-        if($isFeatured){
-            $thumbnail= get_the_post_thumbnail_url($post_id);
-            $workType = get_field('work_type',$post_id);
-            $title = get_the_title();
-            $worlUrl = get_permalink( $post_id );
-            $overlay = get_field('overlay_color', $post_id);
-            
-            echo '<a href=' . $worlUrl . ' class="work-card">';
-                echo '<div class="info">';
-                    echo '<div class="info-wrap">';
-                        echo '<h2>'.$title.'</h2>';
-                        echo '<p>' . $workType. '</p>';
-                    echo '</div>';
-                echo '</div>';
-                echo '<div class="thumbnail">';
-                    echo '<img src='. $thumbnail . ' alt="">';
-                echo '</div>';
-                echo '<div class="overlay-solid" style="background:' . $overlay. ';"></div>';
-                echo '<div class="overlay-grad"></div>';
-			echo '</a>';
-
-        };
-        wp_reset_query();
-    }
-    echo '</div>';
+        echo '<div id="blog-wrap">';
+            get_blog_posts();
+        echo '</div>';
+        echo '<a href="./blog"><p>Read More ></p></a>';
+    echo '</div> <!--#blog-->';
+    
 }
+
 
 
 
@@ -134,16 +102,28 @@ function get_blog_posts(){
     while ($query->have_posts()) {
         $query->the_post();
         $post_id = get_the_ID();
+        $isExternal = get_field('external', $post_id);
+        $source = null;
+        if($isExternal){
+            $postUrl = get_field('external_url', $post_id);
+            $source = get_field('source', $post_id);
+            $tooltip_icon = get_template_directory_uri(). '/img/external_icon.svg';
+        }else{
+            $postUrl = get_permalink( $post_id );
+        }
         $title = get_the_title();
         $date = get_the_date();
-        $postUrl = get_permalink( $post_id );
         $blurb = get_field('blurb',$post_id);
+        
         $blurb_small = substr($blurb, 0, 120);
-        echo '<a href=' .$postUrl . ' class="blog-card">';
-        // echo '<div class="blog-card">';
-        echo '<h2>' . $title . ' |<span> ' .$date .'</span></h2>';
-        echo '<p>' . $blurb_small . '...</p>';
-        echo '</a>';
+        echo '<div class="'.(($source)? 'blog-card tooltip" data-source="'.$source. '" data-icon="'. $tooltip_icon : 'blog-card') .'">';
+            echo '<div class="blog-card-line rainbow-border"></div>';
+
+            echo '<a target="_blank" href=' .$postUrl . '>';
+            // echo '<div class="blog-card">';
+            echo '<h3 class="rainbow-text">' . $title . (($source)? '<span class="source"> from '.$source.'</span>':"") .'<span class="date"><br>'.$date .'</span></h3>';
+            echo '</a>';
+        echo '</div>';
     }
 }
 

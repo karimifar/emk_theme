@@ -124,3 +124,19 @@ var TxtRotate = function(el, toRotate, period) {
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   };
+
+
+
+
+
+var colorEl = $(".rainbow");
+var colors = ["#222", "#7b6063", "#582c53" ,"#582d43" ,"#833233" ,"#4c363c" ,"#635865" ,"#5a6675" ,"#275d3a" ,"#21382d" ,"#07272e" ,"#254749" ,"#1b365f" ,"#3c3b4e","#1e1a37","#762f36", "#1a1c35", "003b4a", ];
+
+setInterval(function() {
+    
+	var colorIndex= Math.floor(Math.random() * colors.length)
+	console.log(colorIndex)
+    $(".rainbow").css("background", colors[colorIndex])
+    $(".rainbow-border").css("border-color", colors[colorIndex])
+    $(".rainbow-text").css("color", colors[colorIndex])
+}, 3000);
