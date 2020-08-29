@@ -81,11 +81,11 @@ function create_home_page(){
 
 
     echo '<div id="blog">';
-        
+        echo '<p class="sec-title"> Blog posts</p>';
         echo '<div id="blog-wrap">';
             get_blog_posts();
         echo '</div>';
-        echo '<a href="./blog"><p>Read More ></p></a>';
+        echo '<a href="./blog"><p class="readmore">Read More ></p></a>';
     echo '</div> <!--#blog-->';
     
 }
