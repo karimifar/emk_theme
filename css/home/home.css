@@ -2,7 +2,7 @@ header{
     border-bottom: none;
 }
 #name{
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'gopher';
     font-weight: 300;
     align-self: center;
@@ -65,7 +65,6 @@ header{
 }
 #typedtext{
     line-height: 1.2em;
-    border-top: 1px solid #ddd;
     font-weight: 900;
     width:50%;
     font-size: 60px;
@@ -76,10 +75,17 @@ header{
     display: block;
     
 }
+#intro-type p{
+    color: #fff;
+    font-size:20px;
+    margin-bottom: 4px;
+}
 #typedtext h1{
+    border-top: 1px solid #ddd;
     font-size: 60px;
-    font-weight: 900;
+    font-weight: 200;
     font-family: 'gopher', sans-serif;
+    line-height: 1.2em;
 }
 #intro-type h1 span{
     font-size: 60px;
@@ -140,7 +146,7 @@ header{
     background:;
     z-index:3;
     height: 100%;
-    width: 40%;
+    width: 60%;
     display: flex;
     padding-right: 5px;
     flex-direction: column;
@@ -151,7 +157,7 @@ header{
 .work-nav{
     text-align: right;
     padding: 5px 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: fit-content;
     align-self: flex-end;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -159,12 +165,11 @@ header{
 }
 .work-nav h2{
     /* font-family: 'gopher', sans-serif; */
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 200;
     color:#fff;
 }
 .work-nav-line{
-    content: ' ';
     width: 0%;
     display: block;
     opacity: 0;

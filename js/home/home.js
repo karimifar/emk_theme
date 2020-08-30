@@ -132,7 +132,7 @@ TxtRotate.prototype.tick = function () {
   if (this.isDeleting) { delta /= 2; }
 
   if (this.emoji){
-    delta=5;
+    delta=0;
   }
   if (!this.isDeleting && this.txt === fullTxt) {
     delta = this.period;

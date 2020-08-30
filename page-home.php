@@ -8,6 +8,7 @@
  * @package emk_theme
  */
 wp_enqueue_style( 'home-style', get_template_directory_uri() . "/css/home/home.css", array('emk_styles') );
+wp_enqueue_style( 'home-style-re', get_template_directory_uri() . "/css/home/home-re.css", array('emk_styles_re') );
 wp_enqueue_script( 'home-scripts', get_template_directory_uri() . "/js/home/home.js", array('jquery'), null, true );
 
 
@@ -29,7 +30,9 @@ function create_home_page(){
     $jsonArr = esc_attr(json_encode($typeArr, JSON_UNESCAPED_UNICODE));
     echo '<div id="works-wrap">';
         echo '<div id="intro-type" class="rainbow">';
+            
             echo '<div id="typedtext">';
+                echo '<p>Howdy!</p>';
                 echo '<h1>I\'m <span class="txt-rotate" data-period="2000" data-rotate='."'". $jsonArr ."'".'></span></h1>';
             echo '</div>';
         echo '</div>';
