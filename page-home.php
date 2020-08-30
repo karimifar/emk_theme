@@ -26,7 +26,7 @@ function create_home_page(){
         endwhile;
     else :
     endif;
-    $jsonArr = esc_attr(json_encode($typeArr));
+    $jsonArr = esc_attr(json_encode($typeArr, JSON_UNESCAPED_UNICODE));
     echo '<div id="works-wrap">';
         echo '<div id="intro-type" class="rainbow">';
             echo '<div id="typedtext">';
