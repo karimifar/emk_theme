@@ -161,8 +161,8 @@ header{
     width: fit-content;
     align-self: flex-end;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-
 }
+
 .work-nav h2{
     /* font-family: 'gopher', sans-serif; */
     font-size: 32px;
@@ -227,7 +227,7 @@ header{
     border-bottom: 3px solid #222;
     width:0px;
     align-self: center;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition-delay: 0.1s;
     margin:-10px 0 10px;
 }

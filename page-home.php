@@ -32,8 +32,8 @@ function create_home_page(){
         echo '<div id="intro-type" class="rainbow">';
             
             echo '<div id="typedtext">';
-                echo '<p>Howdy!</p>';
-                echo '<h1>I\'m <span class="txt-rotate" data-period="2000" data-rotate='."'". $jsonArr ."'".'></span></h1>';
+                // echo '<p>Howdy!</p>';
+                echo '<h1>I\'m a <span class="txt-rotate" data-period="2000" data-rotate='."'". $jsonArr ."'".'></span></h1>';
             echo '</div>';
         echo '</div>';
         echo '<div id="works-img-wrap">';
